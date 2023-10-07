@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ListComparer.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">FinalHomework</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">ListComparer.java</span></div><h1>ListComparer.java</h1><pre class="source lang-java linenums">import java.util.List;
+
+/**
+ * Класс для сравнения двух списков целых чисел по их средним значениям.
+ */
+
+public class ListComparer {
+    private List&lt;Integer&gt; list1;
+    private List&lt;Integer&gt; list2;
+
+    /**
+     * Конструктор класса ListComparer.
+     *
+     * @param list1 Первый список целых чисел.
+     * @param list2 Второй список целых чисел.
+     */
+<span class="fc" id="L17">    public ListComparer(List&lt;Integer&gt; list1, List&lt;Integer&gt; list2) {</span>
+<span class="fc" id="L18">        this.list1 = list1;</span>
+<span class="fc" id="L19">        this.list2 = list2;</span>
+<span class="fc" id="L20">    }</span>
+
+    /**
+     * Сравнивает средние значения двух списков целых чисел.
+     *
+     * @return Результат сравнения в виде строки.
+     */
+
+    public String compareLists() {
+<span class="fc" id="L29">        double averageList1 = AverageCalculator.calculateAverage(list1);</span>
+<span class="fc" id="L30">        double averageList2 = AverageCalculator.calculateAverage(list2);</span>
+
+        String result;
+
+<span class="pc bpc" id="L34" title="1 of 2 branches missed.">        if (averageList1 &gt; averageList2) {</span>
+<span class="nc" id="L35">            result = &quot;Первый список имеет большее среднее значение&quot;;</span>
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        } else if (averageList1 &lt; averageList2) {</span>
+<span class="fc" id="L37">            result = &quot;Второй список имеет большее среднее значение&quot;;</span>
+        } else {
+<span class="fc" id="L39">            result = &quot;Средние значения равны&quot;;</span>
+        }
+
+<span class="fc" id="L42">        return result;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.9.202303310957</span></div></body></html>
